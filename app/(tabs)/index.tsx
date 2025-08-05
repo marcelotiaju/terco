@@ -358,11 +358,11 @@ const App: React.FC = () => {
           </View>
 
           <View style={styles.buttonRow}>
-            <TouchableOpacity style={styles.navButton} onPress={nextPrayer}>
-              <Text style={styles.buttonText}>Próxima Oração</Text>
-            </TouchableOpacity>
             <TouchableOpacity style={styles.navButton} onPress={resetRosary}>
               <Text style={styles.buttonText}>Reiniciar Terço</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.navButton} onPress={nextPrayer}>
+              <Text style={styles.buttonText}>Próxima Oração</Text>
             </TouchableOpacity>
           </View>
         </View>
