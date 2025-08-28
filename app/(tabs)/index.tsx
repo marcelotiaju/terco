@@ -27,13 +27,18 @@ interface MysterySet {
 
 // Dados das orações
 const prayers: { [key: string]: Prayer } = {
-  signOfCross: { name: "Sinal da Cruz", text: "Em nome do Pai, do Filho e do Espírito Santo. Amém." },
-  apostlesCreed: { name: "Creio", text: "Creio em Deus Pai Todo-Poderoso, Criador do céu e da terra, de todas as coisas visíveis e invisíveis. Creio em Jesus Cristo, seu único Filho, nosso Senhor, que foi concebido pelo poder do Espírito Santo, nasceu da Virgem Maria, padeceu sob Pôncio Pilatos, foi crucificado, morto e sepultado; desceu à mansão dos mortos; ressuscitou ao terceiro dia; subiu aos céus, está sentado à direita de Deus Pai Todo-Poderoso, de onde há de vir a julgar os vivos e os mortos. Creio no Espírito Santo, na Santa Igreja Católica, na comunhão dos santos, na remissão dos pecados, na ressurreição da carne, na vida eterna. Amém." },
+  signOfCross: { name: "Sinal da Cruz", text: "Pelo Sinal da Santa Cruz, livrai-nos, Deus, Nosso Senhor, dos nossos inimigos. Em nome do Pai, do Filho e do Espírito Santo. Amém." },
+  offering1: { name: "Oferecimento 1/2", text: "Divino Jesus, eu vos ofereço este terço que vou rezar, contemplando os mistérios de nossa Redenção. Concedei-me, pela intercessão de Maria vossa Mãe Santíssima, a quem me dirijo, as graças necessárias para bem rezá-lo para ganhar as indulgências desta santa devoção." },
+  offering2: { name: "Oferecimento 2/2", text: "(Pode-se o que segue, e também intenções particulares: Ofereço-vos também em reparação aos Corações de Jesus e Maria, nas intenções do Imaculado Coração de Maria, nas intenções do Santo Padre, pelo Santo Padre e por toda a Igreja, pela santificação do clero e das famílias, pelas vocações sacerdotais, religiosas, missionárias e leigas, pela Paz no mundo, pelo Brasil)." },
+  apostlesCreed1: { name: "Creio 1/2", text: "Creio em Deus Pai Todo-Poderoso, Criador do céu e da terra, e em Jesus Cristo, seu único Filho, nosso Senhor, que foi concebido pelo poder do Espírito Santo, nasceu da Virgem Maria, padeceu sob Pôncio Pilatos, foi crucificado, morto e sepultado, desceu à mansão dos mortos, ressuscitou ao terceiro dia, subiu aos céus, está sentado à direita de Deus Pai Todo-Poderoso, de onde há de vir a julgar os vivos e os mortos." },
+  apostlesCreed2: { name: "Creio 2/2", text: "Creio no Espírito Santo, na Santa Igreja Católica, na comunhão dos santos, na remissão dos pecados, na ressurreição da carne, na vida eterna. Amém." },
   ourFather: { name: "Pai Nosso", text: "Pai Nosso, que estais no céu, santificado seja o vosso nome; venha a nós o vosso reino; seja feita a vossa vontade, assim na terra como no céu. O pão nosso de cada dia nos dai hoje; perdoai-nos as nossas ofensas, assim como nós perdoamos a quem nos tem ofendido; e não nos deixeis cair em tentação, mas livrai-nos do mal. Amém." },
   hailMary: { name: "Ave Maria", text: "Ave Maria, cheia de graça, o Senhor é convosco, bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora da nossa morte. Amém." },
   gloryBe: { name: "Glória ao Pai", text: "Glória ao Pai, ao Filho e ao Espírito Santo. Como era no princípio, agora e sempre. Amém." },
-  oMyJesus: { name: "Ó Meu Jesus", text: "Ó meu Jesus, perdoai-nos, livrai-nos do fogo do inferno, levai as almas todas para o Céu, principalmente as que mais precisarem da Vossa infinita misericórdia. Amém." },
-  hailHolyQueen: { name: "Salve Rainha", text: "Salve Rainha, Mãe de misericórdia, vida, doçura e esperança nossa, salve! A vós bradamos, os degredados filhos de Eva; a vós suspiramos, gemendo e chorando neste vale de lágrimas. Eia, pois, advogada nossa, esses vossos olhos misericordiosos a nós volvei; e depois deste desterro, mostrai-nos Jesus, bendito fruto do vosso ventre, ó clemente, ó piedosa, ó doce sempre Virgem Maria. Rogai por nós, Santa Mãe de Deus, para que sejamos dignos das promessas de Cristo. Amém." },
+  oMyJesus: { name: "Ó Meu Jesus", text: "Ó meu Jesus, perdoai-nos, livrai-nos do fogo do inferno, levai as almas todas para o céu e socorrei principalmente, as que mais precisarem. Abençoai o Santo Padre e aumentai a nossa fé, convertei os pecadores e dai-nos a paz e os dons do Espírito Santo. Amém." },
+  hailHolyQueen1: { name: "Salve Rainha1", text: "Infinitas graças vos damos, soberana Rainha, pelos benefícios que recebemos todos os dias de vossas mãos liberais, diginai-vos agora e para sempre tomar-nos debaixo de vosso poderoso amparo, e para mais vos alegrar vos saudamos com uma Salve-Rainha." },
+  hailHolyQueen2: { name: "Salve Rainha2", text: "Salve Rainha, Mãe de misericórdia, vida, doçura e esperança nossa, salve! A vós bradamos, os degredados filhos de Eva; a vós suspiramos, gemendo e chorando neste vale de lágrimas. Eia, pois, advogada nossa, esses vossos olhos misericordiosos a nós volvei;" },
+  hailHolyQueen3: { name: "Salve Rainha3", text: "e depois deste desterro, mostrai-nos Jesus, bendito fruto do vosso ventre, ó clemente, ó piedosa, ó doce sempre Virgem Maria. Rogai por nós, Santa Mãe de Deus, para que sejamos dignos das promessas de Cristo. Amém. Rogai por nós Santa Mãe de Deus. Para que sejamos dignos das promessas de Cristo. Amém." },  
 };
 
 // Dados dos mistérios
@@ -126,15 +131,21 @@ const App: React.FC = () => {
   // Define a sequência de orações iniciais
   const initialPrayerSequence = [
     { type: 'prayer', key: 'signOfCross' },
-    { type: 'prayer', key: 'apostlesCreed' },
+    { type: 'prayer', key: 'offering1' },
+    { type: 'prayer', key: 'offering2' },
+    { type: 'prayer', key: 'apostlesCreed1' },
+    { type: 'prayer', key: 'apostlesCreed2' },    
     { type: 'prayer', key: 'ourFather' },
     ...Array(3).fill({ type: 'prayer', key: 'hailMary' }), // 3 Ave Marias para Fé, Esperança e Caridade
     { type: 'prayer', key: 'gloryBe' },
+    { type: 'prayer', key: 'oMyJesus' },
   ];
 
   // Define a sequência de orações finais
   const finalPrayerSequence = [
-    { type: 'prayer', key: 'hailHolyQueen' },
+    { type: 'prayer', key: 'hailHolyQueen1' },
+    { type: 'prayer', key: 'hailHolyQueen2' },
+    { type: 'prayer', key: 'hailHolyQueen3' },
     { type: 'prayer', key: 'signOfCross' },
   ];
 
@@ -238,7 +249,7 @@ const App: React.FC = () => {
         setCurrentHailMaryCount(0); // Reset count just in case
       }
       return;
-    }
+    };
 
     // If current step is beyond initial prayers, it's in the decade prayers section
     // Calculate current prayer's index within its specific decade (0-12)
@@ -284,6 +295,76 @@ const App: React.FC = () => {
     setCurrentHailMaryCount(0); // Reset Hail Mary count
   };
 
+    // Avança para a próxima Ave-Maria ou próxima oração na sequência
+  const lastPrayer = () => {
+    const totalInitialPrayers = initialPrayerSequence.length;
+    const totalDecadePrayers = decadePrayerSequence.length;
+    const totalFinalPrayers = finalPrayerSequence.length;
+
+    const initialHailMaryStartIndex = initialPrayerSequence.findIndex(p => p.key === 'hailMary');
+    const initialHailMaryEndIndex = initialHailMaryStartIndex + 2;
+
+    // Check if current step is within the initial prayers section
+    if (currentPrayerStep < totalInitialPrayers) {
+      // If it's one of the initial Hail Marys (indices 3, 4, 5)
+      if (currentPrayerStep >= initialHailMaryStartIndex && currentPrayerStep <= initialHailMaryEndIndex) {
+        setCurrentHailMaryCount(prev => prev - 1); // Increment Hail Mary count
+        if (currentPrayerStep === initialHailMaryEndIndex) { // If it's the 3rd Hail Mary
+          setCurrentPrayerStep(prev => prev - 1); // Move to the next prayer (Glory Be)
+          setCurrentHailMaryCount(0); // Reset Hail Mary count for the next sequence
+        } else {
+          setCurrentPrayerStep(prev => prev - 1); // Move to the next Hail Mary in the initial set
+        }
+      } else { // Not a Hail Mary in initial sequence, just move to next prayer
+        setCurrentPrayerStep(prev => prev - 1);
+        setCurrentHailMaryCount(0); // Reset count just in case
+      }
+      return;
+    };
+
+    // If current step is beyond initial prayers, it's in the decade prayers section
+    // Calculate current prayer's index within its specific decade (0-12)
+    // This is relative to the start of the current mystery's decade sequence
+    const prayerIndexInCurrentDecade = currentPrayerStep - (totalInitialPrayers + currentMysteryIndex * totalDecadePrayers);
+
+    const decadeHailMaryStartIndex = decadePrayerSequence.findIndex(p => p.key === 'hailMary');
+    const decadeHailMaryEndIndex = decadeHailMaryStartIndex + 9;
+
+    // If it's one of the 10 Hail Marys in the current decade
+    if (prayerIndexInCurrentDecade >= decadeHailMaryStartIndex && prayerIndexInCurrentDecade <= decadeHailMaryEndIndex) {
+      setCurrentHailMaryCount(prev => prev - 1); // Increment Hail Mary count
+      if (prayerIndexInCurrentDecade === decadeHailMaryEndIndex) { // If it's the 10th Hail Mary
+        setCurrentPrayerStep(prev => prev - 1); // Move to the next prayer (Glory Be for the decade)
+        setCurrentHailMaryCount(0); // Reset Hail Mary count
+      } else {
+        setCurrentPrayerStep(prev => prev - 1); // Move to the next Hail Mary in the decade
+      }
+      return;
+    }
+
+    // If it's not a Hail Mary in the current decade, just move to the next prayer
+    // This handles Our Father, Mystery Announcement, Glory Be, O My Jesus within a decade
+    if (currentMysteryIndex < 5 && prayerIndexInCurrentDecade < totalDecadePrayers - 1) {
+      setCurrentPrayerStep(prev => prev - 1);
+      setCurrentHailMaryCount(0); // Reset count just in case
+      return;
+    }
+
+    // If it's the last prayer of a decade (O My Jesus) and not the last mystery
+    if (currentMysteryIndex < 4) { // If not yet finished the 5th mystery
+      setCurrentMysteryIndex(prev => prev - 1); // Move to the next mystery
+      // Calculate the starting prayer step for the next mystery's decade sequence
+      setCurrentPrayerStep(totalInitialPrayers + (currentMysteryIndex + 1) * totalDecadePrayers);
+      setCurrentHailMaryCount(0); // Reset Hail Mary count
+      return;
+    }
+
+    // If all 5 mysteries are completed, move to final prayers
+    setCurrentScreen('final');
+    // Set currentPrayerStep to the beginning of the final prayers sequence
+    setCurrentPrayerStep(totalInitialPrayers + (5 * totalDecadePrayers));
+    setCurrentHailMaryCount(0); // Reset Hail Mary count
+  };
 
   // Reinicia o terço
   const resetRosary = () => {
@@ -345,24 +426,33 @@ const App: React.FC = () => {
              currentPrayerStep <= initialHailMaryEndIndex &&
              initialPrayerSequence[currentPrayerStep].key === 'hailMary' ? (
               <Text style={styles.counterText}>
-                {`Ave-Marias: ${currentHailMaryCount} / 3`}
+                {`Ave-Marias: ${currentHailMaryCount+1} / 3`}
               </Text>
             ) : currentPrayerStep >= totalInitialPrayers &&
                prayerIndexInCurrentDecade >= decadeHailMaryStartIndex &&
                prayerIndexInCurrentDecade <= decadeHailMaryEndIndex &&
                decadePrayerSequence[prayerIndexInCurrentDecade]?.key === 'hailMary' ? (
               <Text style={styles.counterText}>
-                {`Ave-Marias: ${currentHailMaryCount} / 10`}
+                {`Ave-Marias: ${currentHailMaryCount+1} / 10`}
               </Text>
             ) : null}
           </View>
 
           <View style={styles.buttonRow}>
-            <TouchableOpacity style={styles.navButton} onPress={resetRosary}>
-              <Text style={styles.buttonText}>Reiniciar Terço</Text>
-            </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.navButton, currentPrayerStep === 0 && styles.navButtonDisabled]}
+          onPress={lastPrayer}
+          disabled={currentPrayerStep === 0}
+        >
+          <Text style={styles.buttonText}>Oração Anterior</Text>
+        </TouchableOpacity>
             <TouchableOpacity style={styles.navButton} onPress={nextPrayer}>
               <Text style={styles.buttonText}>Próxima Oração</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.buttonRow}>
+            <TouchableOpacity style={styles.navButton} onPress={resetRosary}>
+              <Text style={styles.buttonText}>Reiniciar Terço</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -378,8 +468,10 @@ const App: React.FC = () => {
         Você rezou os {mysteriesOfTheDay?.name} de hoje.
       </Text>
       <ScrollView style={styles.prayerTextContainer}>
-        <Text style={styles.prayerText}>{prayers.hailHolyQueen.text}</Text>
-        <Text style={styles.prayerText}>{prayers.signOfCross.text}</Text>
+      <Text style={styles.prayerText}>{prayers.hailHolyQueen1.text}</Text>
+      <Text style={styles.prayerText}>{prayers.hailHolyQueen2.text}</Text>
+      <Text style={styles.prayerText}>{prayers.hailHolyQueen3.text}</Text>
+      <Text style={styles.prayerText}>{prayers.signOfCross.text}</Text>
       </ScrollView>
       <TouchableOpacity style={styles.button} onPress={resetRosary}>
         <Text style={styles.buttonText}>Reiniciar</Text>
@@ -493,6 +585,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     width: '100%',
     paddingHorizontal: 10,
+    paddingVertical: 10,
   },
   button: {
     backgroundColor: '#3498DB', // Blue button
@@ -519,6 +612,13 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
     flex: 1, // Distribute space evenly
   },
+  // NOVO ESTILO PARA O BOTÃO DESABILITADO
+  navButtonDisabled: {
+    backgroundColor: '#B2C2BF', // Cinza claro
+    // Remova a sombra para que pareça "achatado"
+    shadowOpacity: 0,
+    elevation: 0,
+  },  
   buttonText: {
     color: '#FFFFFF',
     fontSize: 18,
@@ -527,4 +627,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default App
